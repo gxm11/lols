@@ -19,7 +19,6 @@ else:
 
 np.savetxt("%s/data_pool.dat" % folder, data)
 
-# run
 task_id_vae = insert_and_execute_task("train_vae", iteration)
 task_id_sample = insert_and_execute_task("sample", iteration)
 

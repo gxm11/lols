@@ -15,7 +15,6 @@ initial[:, 0:-1] = initial[:, 0:-1] / 180.0 - 1
 
 np.savetxt("work/%d/initial.dat" % id, initial)
 
-# run
 for iter in range(1, config["max_iteration"] + 1):
     log.title("< Date Generation : %d >" % iter)
     insert_and_execute_task("data_generation", iter)
