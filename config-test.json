@@ -1,0 +1,85 @@
+{
+    "main": {
+        "material": "cysteine",
+        "energy_model_interval": 5,
+        "max_iteration": 10,
+        "initial_number": 100
+    },
+    "data_generation": {},
+    "energy_model": {},
+    "relaxation": {
+        "max": 5
+    },
+    "train_vae": {
+        "cutoff": 2,
+        "execute": "srun -n 1 -c 64 python",
+        "epoches": 50,
+        "config": {
+            "io_dims": [
+                6,
+                2,
+                5
+            ],
+            "layers": [
+                32,
+                32
+            ],
+            "r_kld": 0.01,
+            "r_energy_w": -1
+        }
+    },
+    "sample": {
+        "number": 10,
+        "expand": 0.2,
+        "config": {
+            "io_dims": [
+                6,
+                2,
+                5
+            ],
+            "layers": [
+                32,
+                32
+            ]
+        }
+    },
+    "gp_model": {
+        "boss_execute": "srun -n 1 -c 1 boss",
+        "config": {
+            "energy_pad": 0.3,
+            "space_period": 2,
+            "kernel": "stdp",
+            "noise": 0.001,
+            "template": "lib/config/boss.in.template"
+        }
+    },
+    "gp_minimum": {
+        "period": 2,
+        "error": 0.001,
+        "space_pad": 0,
+        "config": {
+            "kernel": "stdp2",
+            "noise": 0.001
+        }
+    },
+    "dft_energy": {
+        "material": "cysteine",
+        "aims_execute": "srun -n 64 -c 1 /scratch/project_2000724/Lincan/Aims/fhi-aims.200112_2/build_gnu/aims.200112_2.scalapack.mpi.x",
+        "config": {
+            "template": "lib/config/control.in.template",
+            "xc": "pbe",
+            "relax_geometry": null,
+            "max_relaxation_steps": null
+        }
+    },
+    "dft_relax": {
+        "material": "cysteine",
+        "stable_energy": null,
+        "aims_execute": "srun -n 64 -c 1 /scratch/project_2000724/Lincan/Aims/fhi-aims.200112_2/build_gnu/aims.200112_2.scalapack.mpi.x",
+        "config": {
+            "template": "lib/config/control.in.template",
+            "xc": "pbe",
+            "max_relaxation_steps": 100
+        }
+    }
+}
