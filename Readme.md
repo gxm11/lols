@@ -2,7 +2,7 @@
 ![](./lols.jpeg "lols-toc-figure")
 
 ## Tasks
-Tasks in the LOLS workflow. See our publication [Molecular Conformer Search with Low-Energy Latent Space](https://pubs.acs.org/doi/10.1021/acs.jctc.2c00290) for more details.
+Tasks in the LOLS workflow.
 - main
   * data_generation
     - train_vae
@@ -14,12 +14,13 @@ Tasks in the LOLS workflow. See our publication [Molecular Conformer Search with
   * relaxation
     - dft_relax
 
+Read our publication [Molecular Conformer Search with Low-Energy Latent Space](https://pubs.acs.org/doi/10.1021/acs.jctc.2c00290) for details.
+
 ## Run
 1. Switch to the python env which have **pytorch** installed.
-2. Modify `config.json`
- - see the template file `lib/config/config.json.template`
- - or use `config-test.json`
-3. Run `python main.py`
+2. Modify `config.json`, the template file is `lib/config/config.json.template`.
+ - If there's no `config.json`, the `config-test.json` will be used.
+3. Run `python main.py`.
 
 ## Restart Task
 Set task's state = 0 or 1 to restart that task:
