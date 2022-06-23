@@ -1,7 +1,7 @@
 # lols
 Low-energy Latent Space Search Workflow. 
 
-![lols-toc]("lols.jpeg")
+![](./lols.jpeg "lols-toc-figure")
 
 ## Publication
 Our work has been published on **Journal of Chemical Theory and Computation**
