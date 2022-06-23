@@ -1,6 +1,8 @@
 # lols
 Low-energy Latent Space Search Workflow. 
 
+![lols-toc]("lols.jpeg")
+
 ## Publication
 Our work has been published on **Journal of Chemical Theory and Computation**
  - [Molecular Conformer Search with Low-Energy Latent Space](https://pubs.acs.org/doi/10.1021/acs.jctc.2c00290)
