@@ -41,7 +41,6 @@ table task:
 | name | name of task, related to task/{name}.py |
 | config | config of task, will save in config.json |
 
-
 ## Folders and Files
 | folder | information |
 |:------:|:-----------:|

@@ -1,0 +1,33 @@
+# boss in example
+
+# -------------------------------------
+# optimization 
+# -------------------------------------
+# userfn, (ignores) 
+
+# bounds, latent space's range
+bounds __BOUNDS__
+
+# kernel, rbf for no periods
+kernel __KERNEL__
+
+# energy range
+yrange __YRANGE__
+
+# noise, default is 1e-12
+noise __NOISE__
+
+# initpts, replaced by restart data size
+initpts __INITPTS__
+
+# iterpts, no need to any more iterations
+iterpts 0
+
+# verbosity
+verbosity 2
+
+# -------------------------------------
+# results
+# -------------------------------------
+RESULTS:
+__RESULTS__
