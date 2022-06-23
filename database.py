@@ -22,7 +22,10 @@ def create_database():
 
 
 def insert_task(name, iteration, key=0, config={}):
-    task_config = json.load(open("config.json"))[name]
+    if os.path.exists("config.json"):
+        task_config = json.load(open("config.json"))[name]
+    else:
+        task_config = json.load(open("config-test.json"))[name]
     task_config.update(config)
     with sqlite3.connect("lols.db") as db:
         c = db.cursor()

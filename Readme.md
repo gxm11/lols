@@ -35,17 +35,18 @@ Tasks and their sub-tasks.
 
 ## Run
 1. Switch to the python env which have **pytorch** installed.
-2. Modify `config.json`, see the template file `lib/config/config.json.template`.
+2. Modify `config.json`
+ - see the template file `lib/config/config.json.template`
+ - or use `config-test.json`
 3. Run `python main.py`
 
 ## Restart
-Run:
+Set task's state = 0 or 1 to restart that task:
 ```bash
 sqlite3 lols.db 'update task set state = {new_state} where id = {task_id}'
 ```
-to set task's state = 0 or 1 to restart that task. 
 
-If the state set to 0, the task will refresh its config before running. 
+- If the state set to 0, the task will refresh its config before running. 
 
 ## Database
 table task:
