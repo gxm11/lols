@@ -61,6 +61,8 @@ table task:
 ## Hack BOSS
 We need only the GPy fitting results, aka the `hyper-parameters`, not the `x_next` and `global_minimum`. So we hacked **BOSS** library to add the `s` model, by replaced the source code with `lib/boss_modify/*`.
 
-Since the current boss version is `1.5` (Checked at 2022-06-24), it might offer the options to skip finding the `x_next` or `global_minimum`.
+Since the current boss version is `1.5` (Checked at 2022-06-24), it might provide the options to skip finding the `x_next` or `global_minimum`.
 
 Use it at your own risk.
+
+You can also replace the `lib/gp_model.py` to use the [`GPy`](https://pypi.org/project/GPy/) library directly or other Gaussian Process library like [`gpytorch`](https://gpytorch.ai/).
