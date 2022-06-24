@@ -89,7 +89,7 @@ def execute_task(id):
     log.info("Task [%d] <%s> finish" % (id, name))
 
 
-def insert_and_execute_task(name, iteration, key=0, config={}):
+def run_task(name, iteration, key=0, config={}):
     task_id = insert_task(name, iteration, key, config)
     execute_task(task_id)
     return task_id

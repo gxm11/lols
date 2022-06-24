@@ -1,4 +1,4 @@
-from database import prepare_task, insert_and_execute_task
+from database import prepare_task, run_task
 import numpy as np
 import sys
 import model.log as log
@@ -17,11 +17,11 @@ np.savetxt("work/%d/initial.dat" % id, initial)
 
 for iter in range(1, config["max_iteration"] + 1):
     log.title("< Date Generation : %d >" % iter)
-    insert_and_execute_task("data_generation", iter)
+    run_task("data_generation", iter)
 
     if iter % config["energy_model_interval"] == 0:
         log.title("< Energy Model : %d >" % iter)
-        insert_and_execute_task("energy_model", iter)
+        run_task("energy_model", iter)
 
         log.title("< Relaxation : %d >" % iter)
-        insert_and_execute_task("relaxation", iter)
+        run_task("relaxation", iter)
