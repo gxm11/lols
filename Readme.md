@@ -65,4 +65,4 @@ Since the current boss version is `1.5` (Checked at 2022-06-24), it might provid
 
 Use it at your own risk.
 
-You can also replace the `lib/gp_model.py` to use the [GPy](https://pypi.org/project/GPy/) library directly or other Gaussian Process library like [gpytorch](https://gpytorch.ai/).
+You can also replace `lib/gp_model.py` to use the [GPy](https://pypi.org/project/GPy/) library directly or other Gaussian Process library like [gpytorch](https://gpytorch.ai/).
