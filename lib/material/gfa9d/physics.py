@@ -69,7 +69,6 @@ Data = {
 
 Dimension = 9
 Zero_Energy = -27467
-# stable_energy = -27468.60
 
 
 def feature2atoms(f):

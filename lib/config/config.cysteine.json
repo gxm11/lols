@@ -2,18 +2,18 @@
     "main": {
         "material": "cysteine",
         "energy_model_interval": 5,
-        "max_iteration": 10,
+        "max_iteration": 40,
         "initial_number": 100
     },
     "data_generation": {},
     "energy_model": {},
     "relaxation": {
-        "max": 5
+        "max": 1000
     },
     "train_vae": {
         "cutoff": 2,
         "execute": "srun -n 1 -c 64 python",
-        "epoches": 50,
+        "epoches": 200,
         "config": {
             "io_dims": [
                 6,
@@ -21,15 +21,15 @@
                 5
             ],
             "layers": [
-                32,
-                32
+                80,
+                80
             ],
             "r_kld": 0.01,
-            "r_energy_w": -1
+            "r_energy_w": 0
         }
     },
     "sample": {
-        "number": 10,
+        "number": 50,
         "expand": 0.2,
         "config": {
             "io_dims": [
@@ -38,8 +38,8 @@
                 5
             ],
             "layers": [
-                32,
-                32
+                80,
+                80
             ]
         }
     },
@@ -78,7 +78,7 @@
         "config": {
             "template": "lib/config/control.in.template",
             "xc": "pbe",
-            "max_relaxation_steps": 100
+            "max_relaxation_steps": 200
         }
     }
 }

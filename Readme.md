@@ -20,7 +20,7 @@ Read our publication [Molecular Conformer Search with Low-Energy Latent Space](h
 1. Switch to the python env which have **pytorch** and [BOSS](https://pypi.org/project/aalto-boss/) installed.
  - pytorch version: `1.3.1`
  - BOSS version: `0.9.17`
-2. Modify `config.json`, the template file is `lib/config/config.json.template`.
+2. Modify `config.json`, the template file is `lib/config/config.{material}.json`.
  - If there's no `config.json`, the `config-test.json` will be used.
 3. Run `python main.py`.
 

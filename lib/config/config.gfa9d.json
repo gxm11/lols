@@ -1,45 +1,45 @@
 {
     "main": {
-        "material": "cysteine",
-        "energy_model_interval": 5,
-        "max_iteration": 10,
-        "initial_number": 100
+        "material": "gfa9d",
+        "energy_model_interval": 20,
+        "max_iteration": 120,
+        "initial_number": 350
     },
     "data_generation": {},
     "energy_model": {},
     "relaxation": {
-        "max": 5
+        "max": 1000
     },
     "train_vae": {
         "cutoff": 2,
         "execute": "srun -n 1 -c 64 python",
-        "epoches": 50,
+        "epoches": 200,
         "config": {
             "io_dims": [
-                6,
+                10,
                 2,
-                5
+                9
             ],
             "layers": [
-                32,
-                32
+                128,
+                128
             ],
             "r_kld": 0.01,
-            "r_energy_w": -1
+            "r_energy_w": 0
         }
     },
     "sample": {
-        "number": 10,
+        "number": 50,
         "expand": 0.2,
         "config": {
             "io_dims": [
-                6,
+                10,
                 2,
-                5
+                9
             ],
             "layers": [
-                32,
-                32
+                128,
+                128
             ]
         }
     },
@@ -63,8 +63,8 @@
         }
     },
     "dft_energy": {
-        "material": "cysteine",
-        "aims_execute": "srun -n 64 -c 1 /scratch/project_2000724/Lincan/Aims/fhi-aims.200112_2/build_gnu/aims.200112_2.scalapack.mpi.x",
+        "material": "gfa9d",
+        "aims_execute": "srun -n 128 -c 1 /scratch/project_2000724/Lincan/Aims/fhi-aims.200112_2/build_gnu/aims.200112_2.scalapack.mpi.x",
         "config": {
             "template": "lib/config/control.in.template",
             "xc": "pbe",
@@ -73,12 +73,12 @@
         }
     },
     "dft_relax": {
-        "material": "cysteine",
-        "aims_execute": "srun -n 64 -c 1 /scratch/project_2000724/Lincan/Aims/fhi-aims.200112_2/build_gnu/aims.200112_2.scalapack.mpi.x",
+        "material": "gfa9d",
+        "aims_execute": "srun -n 128 -c 1 /scratch/project_2000724/Lincan/Aims/fhi-aims.200112_2/build_gnu/aims.200112_2.scalapack.mpi.x",
         "config": {
             "template": "lib/config/control.in.template",
             "xc": "pbe",
-            "max_relaxation_steps": 100
+            "max_relaxation_steps": 200
         }
     }
 }
