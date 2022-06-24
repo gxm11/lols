@@ -17,7 +17,9 @@ Tasks in the LOLS workflow.
 Read our publication [Molecular Conformer Search with Low-Energy Latent Space](https://pubs.acs.org/doi/10.1021/acs.jctc.2c00290) for details.
 
 ## Run
-1. Switch to the python env which have **pytorch** installed.
+1. Switch to the python env which have **pytorch** and [BOSS](https://pypi.org/project/aalto-boss/) installed.
+ - pytorch version: `1.3.1`
+ - BOSS version: `0.9.17`
 2. Modify `config.json`, the template file is `lib/config/config.json.template`.
  - If there's no `config.json`, the `config-test.json` will be used.
 3. Run `python main.py`.
@@ -28,7 +30,7 @@ Set task's state = 0 or 1 to restart that task:
 sqlite3 lols.db 'update task set state = {new_state} where id = {task_id}'
 ```
 
-- If the state set to 0, the task will refresh its config before running. 
+- If the state set to 0, the task will refresh its config before running.
 
 ## Database
 table task:
@@ -55,3 +57,10 @@ table task:
 | lols.db | data base, where only the task information are saved. |
 | database.py | python modules for operating `lols.db` |
 | main.py | entries for the program |
+
+## Hack BOSS
+We need only the GPy fitting results, aka the `hyper-parameters`, not the `x_next` and `global_minimum`. So we hacked **BOSS** library to add the `s` model, by replaced the source code with `lib/boss_modify/*`.
+
+Since the current boss version is `1.5` (Checked at 2022-06-24), it might offer the options to skip finding the `x_next` or `global_minimum`.
+
+Use it at your own risk.

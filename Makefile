@@ -8,6 +8,3 @@ submit:
 
 clean:
 	rm -rf work/* lols.db lols.log
-
-log:
-	tail -f lols.log
