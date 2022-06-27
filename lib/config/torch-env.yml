@@ -147,4 +147,3 @@ dependencies:
     - typed-ast==1.4.1
     - urllib3==1.25.8
     - wrapt==1.11.2
-prefix: /scratch/project_2000724/guoxm/conda-env/torch

@@ -6,7 +6,6 @@
 #SBATCH --nodes=1
 #SBATCH --output=lols.log
 
-source /users/guoxiaom/.bashrc
 conda activate torch
 
 module load openmpi/4.1.2
